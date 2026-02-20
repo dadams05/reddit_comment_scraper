@@ -30,13 +30,27 @@ git clone https://github.com/dadams05/reddit_comment_scraper.git
 py -m venv <name>
 ```
 
-3. Install the `requirements.txt` file:
+3. Activate the virtual environemnt:
+
+Windows
+
+```
+.\<name>\Scripts\activate
+```
+
+Linux
+
+```
+source <name>/bin/activate
+```
+
+4. Install the `requirements.txt` file:
 
 ```
 pip install -r requirements.txt
 ```
 
-4. Create a `.env` file and put your API keys in:
+5. Create a `.env` file and put your API keys in:
 
 ```
 CLIENT_ID="client_id_key"
@@ -44,13 +58,13 @@ CLIENT_SECRET="client_secret_key"
 USER_AGENT="can_really_put_whatever_here"
 ```
 
-5. Run `main.py` while in your virtual environment. It will scrape the subreddits specified in the script and save the results as a `.json` file in the specified output directory.
+6. Run `main.py` while in your virtual environment. It will scrape the subreddits specified in the script and save the results as a `.json` file in the specified output directory.
 
 ```
 py main.py
 ```
 
-6. There is one optional flag, `-e` or `--extract`. When using this flag, provide one of the scraped `.json` files and it will extract only the comments text out to a `.txt` file.
+There is one optional flag, `-e` or `--extract`. When using this flag, provide one of the scraped `.json` files and it will extract only the comments text out to a `.txt` file.
 
 ```
 py main.py -e "scraped.json"
