@@ -59,5 +59,5 @@ py main.py -e "scraped.json"
 ## Before Committing
 
 1. Run `pip freeze > requirements.txt` if you install additional dependencies
-2. Run `pylint <file name>` on any files you changed
-3. Run `black <file name>` on any files you changed
+2. Run `pylint <filename>` on any files you changed
+3. Run `black <filename>` on any files you changed
