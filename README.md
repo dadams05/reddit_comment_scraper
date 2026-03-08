@@ -6,11 +6,12 @@ This is a simple Python script that will scrape Reddit comments:
 - Saves results to `.json`
 - Can extract just comments text from `.json` to `.txt`
 - Uses Reddit's official API via `PRAW`
+- Filters out comments with blacklisted words
 
 ## Requirements
 
 - Developed and tested with `Python 3.14.2`. Earlier versions may not be compatible.
-- A Reddit API key is required.
+- A Reddit API key is required:
   1. Create a Reddit developer application
   2. Select "script" as the application type
   3. Copy your `CLIENT ID` and `CLIENT SECRET`
@@ -38,6 +39,71 @@ There is one optional flag, `-e` or `--extract`. When using this flag, provide o
 
 ## Before Committing
 
-1. Run `pip freeze > requirements.txt` if you install additional dependencies
-2. Run `pylint <filename>` on any files you changed
-3. Run `black <filename>` on any files you changed
+1. Run `pip freeze > requirements.txt` if any additional dependencies were installed.
+2. Run `pylint <space separated filenames>` on any Python files changed.
+3. Run `black <space separated filenames>` on any Python files changed.
+
+## Example Run
+
+This is example output of when the script is ran.
+
+``` bash
+(.venv) py .\main.py
+>> Starting scraping
+[Subreddit] wallstreetbets
+[Post] ERII Energy Recovery Desalination
+[Post] Who bought the most recent IPO? 🤡
+[Post] I dont think this is talked about enough... (EU big pharma milking US cow DRY)
+[Subreddit] smallstreetbets
+[Post] This weeks plays(feat. Overnight SPYputs)
+[Post] Stocks with strong fundamentals + major government contracts?
+[Post] Ecopetrol (EC) – Political Control, Tax and Asymmetric Downside
+[Subreddit] StockMarket
+[Post] Yes, Snap Inc makes money. Yes, they have many users. Yes, the stock is undervalued.
+[Post] BlackRock caps withdrawals amid credit fund strain
+[Post] Will Iran war fallout end the bull market? When investors really need to worry
+>> Filtering
+>> Finished
+>> Subreddits scraped: 3
+>> Posts scraped:      9
+>> Comments scraped:   263
+>> Comments kept:      257
+>> Time taken:         12.38 sec
+```
+
+This is a snippet from the `.json` file that is outputted.
+
+``` json
+[
+    {
+        "id": "o997l5k",
+        "created": "2026-03-07 21:12:34",
+        "score": 11,
+        "text": "Sir, this is the casino. The mental hospital is two blocks down."
+    },
+    {
+        "id": "o996vet",
+        "created": "2026-03-07 21:12:34",
+        "score": 10,
+        "text": "Wut"
+    },
+    {
+        "id": "o9970u4",
+        "created": "2026-03-07 21:12:34",
+        "score": 5,
+        "text": "Ok"
+    },
+    {
+        "id": "o999e7o",
+        "created": "2026-03-07 21:12:34",
+        "score": 5,
+        "text": "I hope his mom brings him his hot pocket before he posts again."
+    },
+    {
+        "id": "o9994km",
+        "created": "2026-03-07 21:12:34",
+        "score": 4,
+        "text": "Reading rainbow over here"
+    }
+]
+```
