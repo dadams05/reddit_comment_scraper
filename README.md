@@ -18,51 +18,23 @@ This is a simple Python script that will scrape Reddit comments:
 
 ## Usage
 
-1. Clone this project:
+1. Clone this project: `git clone https://github.com/dadams05/reddit_comment_scraper.git`
 
-```
-git clone https://github.com/dadams05/reddit_comment_scraper.git
-```
-
-2. Create a virtual environment:
-
-```
-py -m venv <name>
-```
+2. Create a virtual environment: `py -m venv <name>`
 
 3. Activate the virtual environemnt:
 
-Windows
+   - Windows: `.\<name>\Scripts\activate`
 
-```
-.\<name>\Scripts\activate
-```
+   - Linux: `source <name>/bin/activate`
 
-Linux
-
-```
-source <name>/bin/activate
-```
-
-4. Install the `requirements.txt` file:
-
-```
-pip install -r requirements.txt
-```
+4. Install the `requirements.txt` file (make sure your venv is activated): `pip install -r requirements.txt`
 
 5. Create a `.env` file and put your API keys in it. Check the example file called `.env.example`.
 
-6. Run `main.py` while in your virtual environment. It will scrape the subreddits specified in the script and save the results as a `.json` file in the specified output directory.
+6. Run `main.py` while in your virtual environment. It will scrape the subreddits specified in the script and save the results as a `.json` file in the specified output directory: `py main.py`
 
-```
-py main.py
-```
-
-There is one optional flag, `-e` or `--extract`. When using this flag, provide one of the scraped `.json` files and it will extract only the comments text out to a `.txt` file.
-
-```
-py main.py -e "scraped.json"
-```
+There is one optional flag, `-e` or `--extract`. When using this flag, provide one of the scraped `.json` files and it will extract only the comments text out to a `.txt` file: `py main.py -e "scraped.json"`
 
 ## Before Committing
 
