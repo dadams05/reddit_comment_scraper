@@ -50,13 +50,7 @@ source <name>/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Create a `.env` file and put your API keys in:
-
-```
-CLIENT_ID="client_id_key"
-CLIENT_SECRET="client_secret_key"
-USER_AGENT="can_really_put_whatever_here"
-```
+5. Create a `.env` file and put your API keys in it. Check the example file called `.env.example`.
 
 6. Run `main.py` while in your virtual environment. It will scrape the subreddits specified in the script and save the results as a `.json` file in the specified output directory.
 
